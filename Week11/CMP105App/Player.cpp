@@ -36,6 +36,7 @@ void Player::handleInput(float dt)
 		input->setKeyUp(sf::Keyboard::Up);
 		if (jumped == false)
 		{
+			audio->playSoundbyName("jump");
 			stepVelocity.y = -1000;
 			jumped = true;
 		}
@@ -45,6 +46,10 @@ void Player::handleInput(float dt)
 	{
 		jumped = false;
 		jumped2 = true;
+	}
+	if (input->isKeyDown(sf::Keyboard::Num1))
+	{
+		audio->playSoundbyName("getoverhere");
 	}
 }
 
