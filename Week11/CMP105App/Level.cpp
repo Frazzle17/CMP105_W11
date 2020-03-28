@@ -9,12 +9,18 @@ Level::Level(sf::RenderWindow* hwnd, Input* in, GameState* gs, AudioManager* aud
 
 	// initialise game objects
 	audio->addMusic("sfx/cantina.ogg", "cantina");
+	audio->playMusicbyName("cantina");
+
+	audio->addSound("sfx/getover.ogg", "getoverhere");
+	audio->addSound("sfx/smb_jump-small.ogg", "jump");
+
 	texture.loadFromFile("gfx/MushroomTrans.png");
 	player.setTexture(&texture);
 	player.setPosition(0, 0);
 	player.setSize(sf::Vector2f(100, 100));
 	player.setInput(input);
 	player.setWindow(window);
+	player.setAudio(audio);
 }
 
 Level::~Level()
